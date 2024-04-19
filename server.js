@@ -9,8 +9,9 @@ const employesRouter=require('./routes/employes');
 const enterprisesRouter=require('./routes/enterprises');
 const searchRouter=require('./routes/search');
 const problemesRouter=require('./routes/problemes');
+const solutionsRouter=require('./routes/solutions');
 const {login}=require('./controllers/loginController');
-const {signUpEnterprise,signUpEmploye,getWilayas,getDomaines,getDomainesParEnterprise}=require('./controllers/signUpController');
+const {signUpEnterprise,signUpEmploye,getDomaines,getDomainesParEnterprise}=require('./controllers/signUpController');
 const {requireAuth}=require('./authentication/auth');
 const app=express();
 app.use(cors())
@@ -28,4 +29,5 @@ app.use('/employes',employesRouter);
 app.use('/enterprises',enterprisesRouter);
 app.use('/search',searchRouter);
 app.use('/problemes',problemesRouter);
+app.use('/solutions',solutionsRouter);
 app.listen(5000);

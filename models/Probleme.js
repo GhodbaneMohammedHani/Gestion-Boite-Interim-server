@@ -13,7 +13,7 @@ const Probleme=sequelize.define('probleme',{
         type:DataTypes.STRING
     }
 });
-Probleme.hasOne(Competences,{foreignKey:'num_competence'});
+Probleme.belongsTo(Competences,{foreignKey:'num_competence'});
 Competences.hasMany(Probleme,{foreignKey:'num_competence'});
 Probleme.hasMany(Solution,{foreignKey:'num_probleme'});
 Solution.belongsTo(Probleme,{foreignKey:'num_probleme'});
